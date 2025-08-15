@@ -1,3 +1,4 @@
+--- COUNTRY TABLE
 CREATE TABLE country (
     country_id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
@@ -127,7 +128,6 @@ WHERE
     country.name = 'Bangladesh'
 ORDER BY
     disasters.disaster_date;
-
 
 --- VIEW FOR REPRESENTING DATA
 CREATE VIEW detailed_analysis AS
