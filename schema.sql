@@ -44,17 +44,15 @@ CREATE TABLE findings (
 );
 
 --------------------------------------------------------------------------------------------------------
--- Your original effective indexes (keep these)
 CREATE INDEX disaster_location ON disasters(type, scale);
 CREATE INDEX comparison_for_date ON findings(country_yearly_comparison);
 CREATE INDEX impact_country ON consequences(disaster_id);
 
--- Strategic additions to fill gaps (only 3 new indexes)
 CREATE INDEX idx_country_name_city ON country(name, city);
 CREATE INDEX idx_disaster_dates ON disasters(disaster_date);
 CREATE INDEX idx_findings_global_warming ON findings(global_warming_impact);
 --------------------------------------------------------------------------------------------------------
--- View for Japan's detailed analysis (consistent with your naming)
+-- View for Japan's detailed analysis 
 CREATE VIEW japan_detailed_analysis AS
 SELECT
     country.name,
@@ -104,7 +102,7 @@ WHERE
 ORDER BY
     disasters.disaster_date;
 
--- View for Bangladesh's detailed analysis (identical format)
+-- View for Bangladesh's detailed analysis 
 CREATE VIEW bangladesh_detailed_analysis AS
 SELECT
     country.name,
