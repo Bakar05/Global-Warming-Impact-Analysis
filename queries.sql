@@ -1,15 +1,7 @@
 -- In this SQL file, write (and comment!) the typical SQL queries users will run on your database
 
--- In this SQL file, write (and comment!) the typical SQL queries users will run on your database
-
 -- INSERT DATA
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- First, delete any existing data to avoid conflicts
-DELETE FROM findings;
-DELETE FROM consequences;
-DELETE FROM disasters;
-DELETE FROM country;
-
 -- COUNTRIES (Japan, Pakistan, Bangladesh)
 INSERT INTO country(country_id, name, city, latitude, longitude, total_population) VALUES
     -- Japan
@@ -136,7 +128,6 @@ INSERT INTO findings (findings_id, country_id, disaster_id, conseq_id, country_y
 
 -- SELECT QUERIES
 
--- Leveraging index
 -- 1. Japan's large earthquakes
 SELECT type, disaster_date, scale, num_of_affected
 FROM disasters
@@ -199,7 +190,6 @@ WHERE country_id IN (7,8) AND global_warming_impact LIKE '%monsoon%';
 ;
 
 -- DETAILED_ANALYSIS
-
 SELECT * FROM japan_detailed_analysis;
 SELECT * FROM pakistan_detailed_analysis;
 SELECT * FROM bangladesh_detailed_analysis;
